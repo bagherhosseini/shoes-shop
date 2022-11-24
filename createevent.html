@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Kontakt</title>
+</head>
+<body>
+    <header>
+        <div class="side-bar">
+            
+            <nav class="side-nav">
+                <ul>
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="all-products.html">Alla produkter</a></li>
+                    <li><a href="">Lägg till produkt</a></li>
+                    <li><a href="about.html">Om oss</a></li>
+                </ul>    
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="create-section">
+            <div class="top-contact">
+                <h1 style="margin-top: -50px;">Skapa</h1>
+            </div>
+            
+
+            <form method="Get" action="contact.html">
+
+                <div class="user-answer-all">
+                    <div class="user-answer">
+                        <input class="name" type="text" placeholder="Namn" required minlength="2" pattern="(?=.*[a-z]).{2,}">
+                        <input class="date" type="date" placeholder="Datum" required>
+
+                        <div class="upload-imgs">
+                            <input class="up-load-img" type="file" accept="image/*" required>
+                            <input class="up-load-img" type="file" accept="image/*" required>
+                            <input class="up-load-img" type="file" accept="image/*" required>
+                            <input class="up-load-img" type="file" accept="image/*" required>
+                        </div>
+
+                        <select required>
+                            <option value="1">Rare</option>
+                            <option value="2">Epic</option>
+                            <option value="3">Gold</option>
+                        </select></div>
+                    <div class="text-area">
+                        <textarea name="Agenda" id="" cols="30" rows=6" required minlength="10" placeholder="Agenda"></textarea>
+                        <textarea name="description" class="description" cols="30" rows="7" required minlength="10" placeholder="Kort beskrivning"></textarea>
+                    </div>
+                </div>
+
+                <input class="btn" type="submit">
+            </form>
+        </section>
+    </main>
+
+
+    <footer>
+
+    </footer>
+</body>
+</html>

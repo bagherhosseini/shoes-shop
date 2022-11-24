@@ -77,6 +77,10 @@ p{
     margin: 0; 
 }
 
+h4{
+    margin-bottom: 0;
+}
+
 hr{
     border-color: rgba(255, 255, 255, 0.25);
     border-bottom:none;
@@ -147,7 +151,8 @@ hr{
 
 .main-content{
     width: 100%;
-    
+    margin-bottom: 20px;
+
     & .main-content-img{
         width: 100%;
         height: 500px;
@@ -205,14 +210,6 @@ hr{
             -webkit-line-clamp: 10;
         }
 
-        & .show-all-info{
-            appearance: none;
-
-            &:hover{
-                cursor: pointer;
-            }
-        }
-
         & .show-all-info::before{
             content: "Visa alla info";
         }
@@ -226,9 +223,11 @@ hr{
             bottom: 0;
             right: 0;
             color: skyblue;
+            appearance: none;
 
             &:hover{
                 text-decoration:underline;
+                cursor: pointer;
             }
         }
 
@@ -278,7 +277,7 @@ hr{
 .main-content:has( .main-content-img){
     width: 100%;
     overflow: hidden; 
-    max-height: 1950px;
+    max-height: 2100px;
 
     & .show-all{
         position: absolute;
@@ -322,7 +321,7 @@ hr{
 
 
 /*for event.html*/
-.event-section{
+.product-section{
     margin-top: 72px;
     min-height: calc(100vh - 392px);
     max-width: 1400px;
@@ -339,15 +338,15 @@ hr{
         @include border-raduis();
     }
 
-    & .event-box{
+    & .product-box{
         display: flex;
         flex-direction: row;
         margin-top: 20px;
-        & .event-img{
+        & .product-img{
             width: 50%;
         }
 
-        & .event-info{
+        & .product-info{
             padding: 10px 25px;
             width: 50%;
             display: flex;
@@ -362,11 +361,50 @@ hr{
         justify-content: center;
     }
     
+    & .product-info-list{
+        max-height: 0px;
+        overflow: hidden;
+        transition: 0.5s all;
+    }
+
+    & .product-detail-list{
+        max-height: 0px;
+        overflow: hidden;
+        transition: 0.5s all;
+    }
+
+    & #all-product-info:checked + .product-info-list{
+        max-height: 120px;
+    }
+
+    & #all-product-detail:checked + .product-detail-list{
+        max-height: 80px;
+    }
+
+    & .all-info{
+        position: absolute;
+        right: 0;
+        top: 15px;
+        @include color-white();
+        width: 20px;
+        height: 20px;
+        font-size: 1.6rem;
+        appearance: none;
+    }
+
+    & .all-info:not(:checked)::before{
+        content: "˅";
+    }
+
+    & .all-info:checked::after{
+        content: "˄";
+    }
+
 }
 
 
-/*for createevent.html*/
-.create-section{   
+/*for addproduct.html*/
+.add-section{   
     margin-top: 72px;
     min-height: calc(100vh - 392px);
     display: flex;
@@ -383,13 +421,13 @@ hr{
         @include border-raduis();
     }
 
-    .user-answer-all{
+    .all-product-info{
         display: flex;
         flex-direction: row;
         gap: 21px;
     }
 
-    .user-answer{
+    .product-info{
         display: flex;
         flex-direction: column;
         gap: 21px
@@ -442,12 +480,12 @@ hr{
         width: 500px;
     }
 
-    & input[type="date"]:valid, input[type="file"]:valid, input[type="text"]:valid, textarea:valid{
+    & input[type="text"]:valid, input[type="file"]:valid, input[type="number"]:valid, textarea:valid{
         border-bottom: 1px solid limegreen;
         transition: 0.5s all;
     }
 
-    & input[type="text"]:invalid, input[type="date"]:invalid, input[type="file"]:invalid, textarea:invalid{
+    & input[type="text"]:invalid, input[type="file"]:invalid, input[type="number"]:invalid, textarea:invalid{
         border-bottom: 1px solid red;
         transition: 0.5s all;
     }

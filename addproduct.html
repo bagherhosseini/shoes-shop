@@ -24,18 +24,15 @@
 
 
     <main>
-        <section class="create-section">
+        <section class="add-section">
             <div class="top-contact">
-                <h1 style="margin-top: -50px;">Skapa</h1>
+                <h1 style="margin-top: -50px;">Lägg till produkt</h1>
             </div>
-            
-
-            <form method="Get" action="contact.html">
-
-                <div class="user-answer-all">
-                    <div class="user-answer">
+            <form method="Get" action="addproduct.html">
+                <div class="all-product-info">
+                    <div class="product-info">
                         <input class="name" type="text" placeholder="Namn" required minlength="2" pattern="(?=.*[a-z]).{2,}">
-                        <input class="date" type="date" placeholder="Datum" required>
+                        <input class="price" type="number" placeholder="Price" required minlength="2">
 
                         <div class="upload-imgs">
                             <input class="up-load-img" type="file" accept="image/*" required>
@@ -50,7 +47,7 @@
                             <option value="3">Gold</option>
                         </select></div>
                     <div class="text-area">
-                        <textarea name="Agenda" id="" cols="30" rows=6" required minlength="10" placeholder="Agenda"></textarea>
+                        <textarea name="Agenda" id="" cols="30" rows=6" required minlength="10" placeholder="Produkt detalj"></textarea>
                         <textarea name="description" class="description" cols="30" rows="7" required minlength="10" placeholder="Kort beskrivning"></textarea>
                     </div>
                 </div>

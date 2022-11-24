@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -61,6 +62,10 @@ h1 {
 
 p {
   margin: 0;
+}
+
+h4 {
+  margin-bottom: 0;
 }
 
 hr {
@@ -131,6 +136,7 @@ hr {
 
 .main-content {
   width: 100%;
+  margin-bottom: 20px;
 }
 .main-content .main-content-img {
   width: 100%;
@@ -181,14 +187,6 @@ hr {
 .main-content .product-content .show-all-info:checked + .description {
   -webkit-line-clamp: 10;
 }
-.main-content .product-content .show-all-info {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-.main-content .product-content .show-all-info:hover {
-  cursor: pointer;
-}
 .main-content .product-content .show-all-info::before {
   content: "Visa alla info";
 }
@@ -200,9 +198,13 @@ hr {
   bottom: 0;
   right: 0;
   color: skyblue;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .main-content .product-content .show-all-info:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 .main-content .product-content a {
   text-decoration: none;
@@ -247,7 +249,7 @@ hr {
 .main-content:has(.main-content-img) {
   width: 100%;
   overflow: hidden;
-  max-height: 1950px;
+  max-height: 2100px;
 }
 .main-content:has(.main-content-img) .show-all {
   position: absolute;
@@ -288,7 +290,7 @@ hr {
 }
 
 /*for event.html*/
-.event-section {
+.product-section {
   margin-top: 72px;
   min-height: calc(100vh - 392px);
   max-width: 1400px;
@@ -296,36 +298,70 @@ hr {
   background-color: #0C0C0C;
   border-radius: 4px;
 }
-.event-section h2 {
+.product-section h2 {
   margin: 0;
   margin-bottom: 10px;
 }
-.event-section img {
+.product-section img {
   border-radius: 4px;
 }
-.event-section .event-box {
+.product-section .product-box {
   display: flex;
   flex-direction: row;
   margin-top: 20px;
 }
-.event-section .event-box .event-img {
+.product-section .product-box .product-img {
   width: 50%;
 }
-.event-section .event-box .event-info {
+.product-section .product-box .product-info {
   padding: 10px 25px;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.event-section .othter-img {
+.product-section .othter-img {
   width: 100%;
   display: flex;
   justify-content: center;
 }
+.product-section .product-info-list {
+  max-height: 0px;
+  overflow: hidden;
+  transition: 0.5s all;
+}
+.product-section .product-detail-list {
+  max-height: 0px;
+  overflow: hidden;
+  transition: 0.5s all;
+}
+.product-section #all-product-info:checked + .product-info-list {
+  max-height: 120px;
+}
+.product-section #all-product-detail:checked + .product-detail-list {
+  max-height: 80px;
+}
+.product-section .all-info {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  color: rgb(255, 255, 255) !important;
+  width: 20px;
+  height: 20px;
+  font-size: 1.6rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.product-section .all-info:not(:checked)::before {
+  content: "˅";
+}
+.product-section .all-info:checked::after {
+  content: "˄";
+}
 
-/*for createevent.html*/
-.create-section {
+/*for addproduct.html*/
+.add-section {
   margin-top: 72px;
   min-height: calc(100vh - 392px);
   display: flex;
@@ -333,7 +369,7 @@ hr {
   flex-direction: column;
   position: relative;
 }
-.create-section form {
+.add-section form {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -341,28 +377,28 @@ hr {
   padding: 20px 15px;
   border-radius: 4px;
 }
-.create-section .user-answer-all {
+.add-section .all-product-info {
   display: flex;
   flex-direction: row;
   gap: 21px;
 }
-.create-section .user-answer {
+.add-section .product-info {
   display: flex;
   flex-direction: column;
   gap: 21px;
 }
-.create-section .upload-imgs {
+.add-section .upload-imgs {
   display: flex;
   flex-wrap: wrap;
   max-width: 500px;
 }
-.create-section .upload-imgs .up-load-img {
+.add-section .upload-imgs .up-load-img {
   color: #757575 !important;
   font-size: 0.9rem;
   cursor: pointer;
   width: 240px;
 }
-.create-section .upload-imgs .up-load-img::-webkit-file-upload-button {
+.add-section .upload-imgs .up-load-img::-webkit-file-upload-button {
   color: #757575;
   border: none;
   border-bottom: thin solid grey;
@@ -372,7 +408,7 @@ hr {
   padding: 10px 15px;
   cursor: pointer;
 }
-.create-section .upload-imgs .up-load-img::file-selector-button {
+.add-section .upload-imgs .up-load-img::file-selector-button {
   color: #757575;
   border: none;
   border-bottom: thin solid grey;
@@ -382,18 +418,18 @@ hr {
   padding: 10px 15px;
   cursor: pointer;
 }
-.create-section .upload-imgs .up-load-img:valid::-webkit-file-upload-button {
+.add-section .upload-imgs .up-load-img:valid::-webkit-file-upload-button {
   color: rgb(255, 255, 255) !important;
   border-bottom: thin solid limegreen;
 }
-.create-section .upload-imgs .up-load-img:valid::file-selector-button {
+.add-section .upload-imgs .up-load-img:valid::file-selector-button {
   color: rgb(255, 255, 255) !important;
   border-bottom: thin solid limegreen;
 }
-.create-section .upload-imgs .up-load-img:valid {
+.add-section .upload-imgs .up-load-img:valid {
   color: rgb(255, 255, 255) !important;
 }
-.create-section input, .create-section textarea {
+.add-section input, .add-section textarea {
   color: rgb(255, 255, 255) !important;
   outline: none;
   border: none;
@@ -404,15 +440,15 @@ hr {
   resize: none;
   width: 500px;
 }
-.create-section input[type=date]:valid, .create-section input[type=file]:valid, .create-section input[type=text]:valid, .create-section textarea:valid {
+.add-section input[type=text]:valid, .add-section input[type=file]:valid, .add-section input[type=number]:valid, .add-section textarea:valid {
   border-bottom: 1px solid limegreen;
   transition: 0.5s all;
 }
-.create-section input[type=text]:invalid, .create-section input[type=date]:invalid, .create-section input[type=file]:invalid, .create-section textarea:invalid {
+.add-section input[type=text]:invalid, .add-section input[type=file]:invalid, .add-section input[type=number]:invalid, .add-section textarea:invalid {
   border-bottom: 1px solid red;
   transition: 0.5s all;
 }
-.create-section select {
+.add-section select {
   color: rgb(255, 255, 255) !important;
   margin: 0;
   outline: 0;
@@ -421,37 +457,37 @@ hr {
   border: none;
   background-color: #0c0c0c;
 }
-.create-section select:valid {
+.add-section select:valid {
   border-bottom: 1px solid limegreen;
 }
-.create-section option {
+.add-section option {
   border-radius: 50%;
   outline: 0;
   border: none;
 }
-.create-section .btn {
+.add-section .btn {
   transition: 0.5s all;
   border-bottom: 1px solid #272626;
   width: 100%;
   border-radius: 4px;
 }
-.create-section .btn:hover {
+.add-section .btn:hover {
   cursor: pointer;
   background-color: #3F3E3E;
 }
-.create-section .date {
+.add-section .date {
   color: #757575 !important;
   cursor: text;
 }
-.create-section .date:valid {
+.add-section .date:valid {
   color: rgb(255, 255, 255) !important;
 }
-.create-section input[type=date]::-webkit-inner-spin-button,
-.create-section input[type=date]::-webkit-calendar-picker-indicator {
+.add-section input[type=date]::-webkit-inner-spin-button,
+.add-section input[type=date]::-webkit-calendar-picker-indicator {
   display: none;
   -webkit-appearance: none;
 }
-.create-section .text-area {
+.add-section .text-area {
   display: flex;
   flex-direction: column;
   gap: 2px;

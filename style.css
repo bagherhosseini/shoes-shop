@@ -352,6 +352,7 @@ hr {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  cursor: pointer;
 }
 .product-section .all-info:not(:checked)::before {
   content: "˅";

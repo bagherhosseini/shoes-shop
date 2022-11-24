@@ -390,6 +390,7 @@ hr{
         height: 20px;
         font-size: 1.6rem;
         appearance: none;
+        cursor: pointer;
     }
 
     & .all-info:not(:checked)::before{

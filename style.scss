@@ -147,15 +147,21 @@ hr{
     max-width: 1400px;
     width: 100%;
     margin-top: 72px;
+    margin-bottom: 100px;
 }
 
 .main-content{
     width: 100%;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     & .main-content-img{
         width: 100%;
-        height: 500px;
+        max-width: 800px;
+        height: 700px;
         margin-bottom: 30px;
         
         & img{
@@ -326,6 +332,7 @@ hr{
     min-height: calc(100vh - 392px);
     max-width: 1400px;
     width: 100%;
+    margin-bottom: 100px;
     background-color: #0C0C0C;
     @include border-raduis();
 
@@ -548,6 +555,7 @@ hr{
 // for about.html 
 .about-section{
     margin-top: 72px;
+    margin-bottom: 100px;
     min-height: calc(100vh - 390px);
     display: flex;
     flex-direction: column;

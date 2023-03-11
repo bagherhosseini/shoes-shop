@@ -2,7 +2,6 @@
 * {
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
@@ -93,7 +92,6 @@ hr {
   width: 100%;
   display: flex;
   justify-content: center;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 10px 0;
@@ -103,7 +101,6 @@ hr {
   padding-left: 0;
   display: flex;
   flex-direction: row;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   gap: 20px;
@@ -132,15 +129,21 @@ hr {
   max-width: 1400px;
   width: 100%;
   margin-top: 72px;
+  margin-bottom: 100px;
 }
 
 .main-content {
   width: 100%;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .main-content .main-content-img {
   width: 100%;
-  height: 500px;
+  max-width: 800px;
+  height: 700px;
   margin-bottom: 30px;
 }
 .main-content .main-content-img img {
@@ -223,7 +226,6 @@ hr {
 .categori {
   font-size: 0.8rem;
   font-weight: 900;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   bottom: 0;
@@ -295,6 +297,7 @@ hr {
   min-height: calc(100vh - 392px);
   max-width: 1400px;
   width: 100%;
+  margin-bottom: 100px;
   background-color: #0C0C0C;
   border-radius: 4px;
 }
@@ -399,16 +402,6 @@ hr {
   cursor: pointer;
   width: 240px;
 }
-.add-section .upload-imgs .up-load-img::-webkit-file-upload-button {
-  color: #757575;
-  border: none;
-  border-bottom: thin solid grey;
-  background: none;
-  margin-right: 20px;
-  font-size: 0.9rem;
-  padding: 10px 15px;
-  cursor: pointer;
-}
 .add-section .upload-imgs .up-load-img::file-selector-button {
   color: #757575;
   border: none;
@@ -418,10 +411,6 @@ hr {
   font-size: 0.9rem;
   padding: 10px 15px;
   cursor: pointer;
-}
-.add-section .upload-imgs .up-load-img:valid::-webkit-file-upload-button {
-  color: rgb(255, 255, 255) !important;
-  border-bottom: thin solid limegreen;
 }
 .add-section .upload-imgs .up-load-img:valid::file-selector-button {
   color: rgb(255, 255, 255) !important;
@@ -496,6 +485,7 @@ hr {
 
 .about-section {
   margin-top: 72px;
+  margin-bottom: 100px;
   min-height: calc(100vh - 390px);
   display: flex;
   flex-direction: column;
@@ -531,7 +521,6 @@ hr {
   background: none;
 }
 .about-section .ceo-box .ceo {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 20px 25px;
